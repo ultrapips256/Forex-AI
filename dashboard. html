@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FOREX AI Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <h1>FOREX AI Dashboard</h1>
+  <button onclick="logout()" class="signup-btn">Logout</button>
+</header>
+
+<section class="hero">
+  <h2>Welcome Trader 👋</h2>
+  <p>Your AI trading account is ready.</p>
+</section>
+
+<section class="trust-center">
+  <h2>Account Status</h2>
+
+  <div class="stats">
+    <div>
+      <h3>🤖 AI Bot</h3>
+      <p>Inactive</p>
+    </div>
+
+    <div>
+      <h3>💳 Payment</h3>
+      <p>Not Verified</p>
+    </div>
+
+    <div>
+      <h3>📈 MT5 Connection</h3>
+      <p>Waiting for Admin</p>
+    </div>
+
+    <div>
+      <h3>🔔 Notifications</h3>
+      <p>No new notifications.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <h2>FOREX AI Products</h2>
+
+  <a href="products.html" class="start-btn">🤖 AI Trading Bots</a><br><br>
+
+  <a href="products.html#signals" class="start-btn">📈 VIP Signals</a><br><br>
+
+  <a href="products.html#mentorship" class="start-btn">🎓 Mentorship</a><br><br>
+
+  <a href="account-management.html" class="start-btn">💼 Account Management</a>
+</section>
+
+<section class="services">
+  <h2>Admin Notice</h2>
+  <div class="service-card">
+    Payment must be verified before your AI Bot or Signals are activated.
+  </div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
