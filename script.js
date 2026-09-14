@@ -55,3 +55,7 @@ if (
 ) {
   window.location.href = "login.html";
 }
+function submitAccount() {
+  alert("Account submitted successfully! Admin will review your MT5 details and contact you via WhatsApp or Email.");
+  window.location.href = "dashboard.html";
+}
