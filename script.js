@@ -22,26 +22,25 @@ function signUp() {
 }
 
 // LOGIN
+
 function login() {
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
 
-  let user = JSON.parse(localStorage.getItem("forexai_user"));
+  const user = JSON.parse(localStorage.getItem("forexai_user"));
 
-  if (!user || user.email !== email) {
-    alert("Account not found.");
+  if (!user) {
+    alert("Please create an account first.");
     return;
   }
 
-  if (user.password !== password) {
-    alert("Wrong password.");
-    return;
+  if (email === user.email && password === user.password) {
+    localStorage.setItem("loggedIn", "true");
+    window.location.href = "dashboard.html";
+  } else {
+    alert("Wrong email or password.");
   }
-
-  localStorage.setItem("loggedIn", "true");
-  window.location.href = "dashboard.html";
 }
-
 // LOGOUT
 function logout() {
   localStorage.removeItem("loggedIn");
