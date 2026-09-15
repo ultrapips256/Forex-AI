@@ -136,3 +136,12 @@ function togglePassword(id) {
   const input = document.getElementById(id);
   input.type = input.type === "password" ? "text" : "password";
 }
+function togglePassword(id) {
+  const input = document.getElementById(id);
+
+  if (input.type === "password") {
+    input.type = "text";
+  } else {
+    input.type = "password";
+  }
+}
