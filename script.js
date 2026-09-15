@@ -132,3 +132,7 @@ function logout() {
   localStorage.removeItem("loggedIn");
   window.location.href = "index.html";
 }
+function togglePassword(id) {
+  const input = document.getElementById(id);
+  input.type = input.type === "password" ? "text" : "password";
+}
