@@ -148,3 +148,25 @@ hr{
   border:1px solid #00ff99;
   margin:20px 0;
 }
+.password-box{
+display:flex;
+align-items:center;
+background:#1c1c1c;
+border-radius:10px;
+margin:12px 0;
+}
+
+.password-box input{
+flex:1;
+margin:0;
+border:none;
+background:transparent;
+}
+
+.password-box button{
+background:none;
+border:none;
+color:#00ff99;
+font-size:20px;
+padding:10px;
+}
