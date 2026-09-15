@@ -79,3 +79,19 @@ I agree to the 60% Client / 40% FOREX AI profit split.`;
     "_blank"
   );
 }
+function paymentDone() {
+  const product = localStorage.getItem("selectedProduct");
+  const amount = localStorage.getItem("selectedPrice");
+
+  const message = `FOREX AI PAYMENT VERIFICATION
+
+Product: ${product}
+Amount: ${amount}
+
+I have completed payment. Please verify my payment and activate my account.`;
+
+  window.open(
+    "https://wa.me/256765560729?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+}
