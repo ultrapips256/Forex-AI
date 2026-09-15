@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FOREX AI Payment</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header class="navbar">
+<h1>FOREX AI Payment</h1>
+<a href="dashboard.html" class="login-btn">Dashboard</a>
+</header>
+
+<div class="form-container">
+
+<h2>Complete Your Payment</h2>
+
+<p><strong>Product:</strong> <span id="productName">Loading...</span></p>
+<p><strong>Amount:</strong> <span id="productPrice">Loading...</span></p>
+
+<hr>
+
+<h3>🏦 Centenary Bank</h3>
+<p><b>Bank:</b> Centenary Bank</p>
+<p><b>Account Name:</b> Jovan</p>
+<p><b>Account Number:</b> 3204942758</p>
+
+<hr>
+
+<h3>📱 Mobile Money (Uganda)</h3>
+<p><b>Name:</b> Jovan</p>
+<p><b>Number:</b> 0731264482</p>
+
+<hr>
+
+<h3>💳 Visa / Mastercard</h3>
+<p>Card payments will be enabled after admin approval.</p>
+
+<hr>
+
+<h3>₮ USDT (TRC20)</h3>
+<p>Wallet address will be added soon.</p>
+
+<button class="start-btn" onclick="paymentDone()">I've Paid</button>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+document.getElementById("productName").innerHTML =
+localStorage.getItem("selectedProduct");
+
+document.getElementById("productPrice").innerHTML =
+localStorage.getItem("selectedPrice");
+</script>
+
+</body>
+</html>
