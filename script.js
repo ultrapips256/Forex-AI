@@ -50,3 +50,14 @@ function logout() {
   localStorage.removeItem("loggedIn");
   window.location.href = "index.html";
 }
+// BUY / ENROLL BUTTONS
+function buyProduct(product, price) {
+  localStorage.setItem("selectedProduct", product);
+  localStorage.setItem("selectedPrice", price);
+  window.location.href = "payment.html";
+}
+
+// ACCOUNT MANAGEMENT BUTTON
+function openAccountManagement() {
+  window.location.href = "account-management.html";
+}
