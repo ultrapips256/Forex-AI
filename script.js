@@ -26,9 +26,23 @@ function login() {
   const user = JSON.parse(localStorage.getItem("forexai_user"));
 
   if (!user) {
-    alert("Please create an account first.");
+    alert("Account not found. Please sign up first.");
     return;
   }
+
+  if (user.email !== email) {
+    alert("Account not found.");
+    return;
+  }
+
+  if (user.password !== password) {
+    alert("Wrong password.");
+    return;
+  }
+
+  localStorage.setItem("loggedIn", "true");
+  window.location.href = "dashboard.html";
+}
 
   if (email !== user.email) {
     alert("Account not found.");
