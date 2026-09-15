@@ -88,8 +88,30 @@ I have completed my payment. Please verify my payment and activate my account.`;
 
 // ---------- ACCOUNT MANAGEMENT ----------
 function submitAccount() {
-  alert("Your MT5 account details have been submitted.\nFOREX AI Admin will contact you via WhatsApp or Email.");
-  window.location.href = "dashboard.html";
+  const name = document.getElementById("fullName").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const broker = document.getElementById("broker").value;
+  const mt5 = document.getElementById("mt5").value;
+  const balance = document.getElementById("balance").value;
+
+  const message =
+`FOREX AI ACCOUNT MANAGEMENT
+
+Name: ${name}
+Email: ${email}
+WhatsApp: ${phone}
+Broker: ${broker}
+MT5 Account: ${mt5}
+Balance: $${balance}
+
+I agree to the 60% Client / 40% FOREX AI profit split.`;
+
+  window.open(
+    "https://wa.me/256765560729?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+}
 }
 
 // ---------- LOGOUT ----------
