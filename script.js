@@ -68,8 +68,22 @@ function buyProduct(product, price) {
 
 // ---------- PAYMENT ----------
 function paymentDone() {
-  alert("Payment submitted successfully!\nWaiting for Admin Verification.");
-  window.location.href = "dashboard.html";
+  const product = localStorage.getItem("selectedProduct");
+  const amount = localStorage.getItem("selectedPrice");
+
+  const message =
+`FOREX AI PAYMENT VERIFICATION
+
+Product: ${product}
+Amount: ${amount}
+
+I have completed my payment. Please verify my payment and activate my account.`;
+
+  window.open(
+    "https://wa.me/256765560729?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+}
 }
 
 // ---------- ACCOUNT MANAGEMENT ----------
