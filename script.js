@@ -1,4 +1,5 @@
 // ---------- SIGN UP ----------
+
 function signUp() {
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -9,16 +10,14 @@ function signUp() {
     return;
   }
 
-  localStorage.setItem("forexai_user", JSON.stringify({
-    name,
-    email,
-    password
-  }));
+  localStorage.setItem(
+    "forexai_user",
+    JSON.stringify({ name, email, password })
+  );
 
   alert("Account created successfully!");
   window.location.href = "login.html";
 }
-
 // ---------- LOGIN ----------
 function login() {
   const email = document.getElementById("email").value.trim();
