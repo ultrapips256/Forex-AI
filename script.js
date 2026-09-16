@@ -11,15 +11,32 @@ const supabase = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );// SIGN UP
-function signUp() {
+async function signUp() {
   const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
+  const email = document.getElementById("email").value.trim().toLowerCase();
   const password = document.getElementById("password").value;
 
   if (!name || !email || !password) {
     alert("Please fill in all fields.");
     return;
   }
+
+  const { error } = await supabase.from("users").insert([
+    {
+      full_name: name,
+      email: email,
+      password: password
+    }
+  ]);
+
+  if (error) {
+    alert(error.message);
+    return;
+  }
+
+  alert("Account created successfully!");
+  window.location.href = "login.html";
+}
 
   localStorage.setItem("forexai_user", JSON.stringify({
     name: name,
