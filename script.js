@@ -1,10 +1,12 @@
 const SUPABASE_URL = "https://huhqbgyedadcdaqbhgri.supabase.co";
-const SUPABASE_KEY = "sb_publishable_1XEqnCyO0Gusn9DN97zl4w_...";
+const SUPABASE_KEY = "YOUR_FULL_sb_publishable_KEY";
 
 const supabase = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
-);// SIGN UP
+);
+
+// SIGN UP
 async function signUp() {
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim().toLowerCase();
