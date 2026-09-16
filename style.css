@@ -170,3 +170,17 @@ color:#00ff99;
 font-size:20px;
 padding:10px;
 }
+select{
+  width:100%;
+  padding:14px;
+  margin:12px 0;
+  border-radius:12px;
+  background:#111;
+  color:white;
+  border:1px solid #00ff99;
+}
+
+.form-container p{
+  color:#bdbdbd;
+  text-align:center;
+}
