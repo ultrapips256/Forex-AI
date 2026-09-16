@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FOREX AI - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div class="form-container">
+  <h1 style="color:#00ff99;">FOREX AI</h1>
+  <p>Welcome back. Login to your trading dashboard.</p>
+
+  <input id="email" type="email" placeholder="📧 Email Address">
+
+  <div class="password-box">
+    <input id="password" type="password" placeholder="🔒 Password">
+    <button type="button" onclick="togglePassword('password')">👁️</button>
+  </div>
+
+  <label style="color:white;">
+    <input type="checkbox"> Remember Me
+  </label>
+
+  <button class="start-btn" onclick="login()">🚀 Login</button>
+
+  <p style="margin-top:15px;">
+    <a href="#" style="color:#00ff99;">Forgot Password?</a>
+  </p>
+
+  <p>
+    Don't have an account?
+    <a href="signup.html" style="color:#00ff99;">Create Account</a>
+  </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
