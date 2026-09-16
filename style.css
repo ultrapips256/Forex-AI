@@ -184,3 +184,24 @@ select{
   color:#bdbdbd;
   text-align:center;
 }
+body{
+  background: linear-gradient(180deg,#000000,#031b14);
+  color:white;
+  font-family:Arial,sans-serif;
+}
+
+.form-container{
+  backdrop-filter: blur(12px);
+}
+
+.start-btn:hover{
+  background:#00cc7a;
+  box-shadow:0 0 20px #00ff99;
+  transform:scale(1.02);
+  transition:0.3s;
+}
+
+a{
+  color:#00ff99;
+  text-decoration:none;
+}
