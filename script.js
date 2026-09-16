@@ -4,12 +4,6 @@ const SUPABASE_KEY = "sb_publishable_1XEqnCyO0Gusn9DN97zl4w_...";
 const supabase = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
-  const SUPABASE_URL = "https://huhqbgyedadcdaqbhgri.supabase.co";
-const SUPABASE_KEY = "YOUR_FULL_sb_publishable_KEY";
-
-const supabase = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
 );// SIGN UP
 async function signUp() {
   const name = document.getElementById("name").value.trim();
