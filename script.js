@@ -1,5 +1,49 @@
+const SUPABASE_URL = "https://huhqbgyedadcdaqbhgri.supabase.co";
+const SUPABASE_KEY = "sb_publishable_juTXckM98KOqTWvXm50Glw_j-56vpLQ";
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+async function signUp() {
+  const { error } = await supabase.from("users").insert([{
+    full_name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    country: document.getElementById("country").value,
+    password: document.getElementById("password").value,
+    payment_status: "Pending",
+    bot_status: "Inactive"
+  }]);
 
+  if (error) {
+    alert(error.message);
+    return;
+  }
+
+  alert("Account Created Successfully!");
+  window.location.href = "login.html";
+}
+
+async function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  const { data, error } = await supabase
+    .from("users")
+    .select("*")
+    .eq("email", email)
+    .single();
+
+  if (error || !data) {
+    alert("Account not found.");
+    return;
+  }
+
+  if (data.password !== password) {
+    alert("Wrong password.");
+    return;
+  }
+
+  window.location.href = "dashboard.html";
+}
 // LOGOUT
 function logout() {
   localStorage.removeItem("loggedIn");
