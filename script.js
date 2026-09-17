@@ -7,8 +7,51 @@ const supabase = window.supabase.createClient(
 );
 
 // SIGN UP
-async function signUp() {
 
+async function signUp() {
+  try {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim().toLowerCase();
+    const phone = document.getElementById("phone").value.trim();
+    const country = document.getElementById("country").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (!name || !email || !phone || !country || !password || !confirmPassword) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+    const { data, error } = await supabase
+      .from("users")
+      .insert([{
+        full_name: name,
+        email: email,
+        phone: phone,
+        country: country,
+        password: password,
+        payment_status: "Pending",
+        bot_status: "Inactive"
+      }])
+      .select();
+
+    if (error) {
+      alert("Supabase Error: " + error.message);
+      return;
+    }
+
+    alert("Account created successfully!");
+    window.location.href = "login.html";
+
+  } catch (err) {
+    alert("Error: " + err.message);
+  }
+}
 
 // LOGIN
 function login() {
