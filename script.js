@@ -10,37 +10,37 @@ const supabase = window.supabase.createClient(
 async function signUp() {
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim().toLowerCase();
+  const phone = document.getElementById("phone").value.trim();
+  const country = document.getElementById("country").value;
   const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
 
-  if (!name || !email || !password) {
+  if (!name || !email || !phone || !country || !password || !confirmPassword) {
     alert("Please fill in all fields.");
     return;
   }
 
-  const { error } = await supabase.from("users").insert([
-    {
-      full_name: name,
-      email: email,
-      password: password
-    }
-  ]);
+  if (password !== confirmPassword) {
+    alert("Passwords do not match.");
+    return;
+  }
+
+  const { error } = await supabase.from("users").insert([{
+    full_name: name,
+    email: email,
+    phone: phone,
+    country: country,
+    password: password,
+    payment_status: "Pending",
+    bot_status: "Inactive"
+  }]);
 
   if (error) {
     alert(error.message);
     return;
   }
 
-  alert("Account created successfully!");
-  window.location.href = "login.html";
-}
-
-  localStorage.setItem("forexai_user", JSON.stringify({
-    name: name,
-    email: email,
-    password: password
-  }));
-
-  alert("Account created successfully!");
+  alert("Welcome to FOREX AI! Account created successfully.");
   window.location.href = "login.html";
 }
 
