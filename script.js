@@ -8,6 +8,8 @@ const supabase = window.supabase.createClient(
 
 // SIGN UP
 async function signUp() {
+  alert("Create Account button works!");
+
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim().toLowerCase();
   const phone = document.getElementById("phone").value.trim();
